@@ -109,8 +109,9 @@ resource "azurerm_network_interface" "example" {
   ip_configuration {
     name                          = "internal"
     subnet_id                     = azurerm_subnet.example.id
-    private_ip_address = var.vm_ip[count.index]
     private_ip_address_allocation = "Static"
+    private_ip_address = var.vm_ip[count.index]
+    
   }
 }
 
